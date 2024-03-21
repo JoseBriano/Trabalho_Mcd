@@ -5,6 +5,8 @@
  */
 package telas;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author Senai
@@ -16,6 +18,7 @@ public class TelaUsuario extends javax.swing.JFrame {
      */
     public TelaUsuario() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
 
     /**
@@ -27,21 +30,33 @@ public class TelaUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        btnLogar = new javax.swing.JToggleButton();
+        inputSenha = new javax.swing.JPasswordField();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1920, 1080));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().add(btnLogar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 800, 220, 50));
+
+        inputSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputSenhaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(inputSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 220, 20));
+        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 650, 220, -1));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagemlogin/1.png"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1030));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void inputSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSenhaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputSenhaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +94,9 @@ public class TelaUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnLogar;
+    private javax.swing.JPasswordField inputSenha;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
