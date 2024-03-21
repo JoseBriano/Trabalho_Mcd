@@ -29,7 +29,7 @@ public class CriarConta extends javax.swing.JFrame {
 
         inputUser = new javax.swing.JTextField();
         inputSenha = new javax.swing.JPasswordField();
-        btnCriar = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,7 +48,13 @@ public class CriarConta extends javax.swing.JFrame {
             }
         });
         getContentPane().add(inputSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 690, 220, 20));
-        getContentPane().add(btnCriar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 830, 210, 50));
+
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1204, 824, 210, 50));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagemlogin/Inserir um subtítulo (2).png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
@@ -63,6 +69,10 @@ public class CriarConta extends javax.swing.JFrame {
     private void inputSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSenhaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputSenhaActionPerformed
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -100,9 +110,9 @@ public class CriarConta extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCriar;
     private javax.swing.JPasswordField inputSenha;
     private javax.swing.JTextField inputUser;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }
