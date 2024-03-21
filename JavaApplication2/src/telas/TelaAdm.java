@@ -6,6 +6,7 @@
 package telas;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 
 /**
  *
@@ -18,6 +19,7 @@ public class TelaAdm extends javax.swing.JFrame {
      */
     public TelaAdm() {
         initComponents();
+        setIcon();
     }
 
     /**
@@ -40,18 +42,19 @@ public class TelaAdm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaProdutos = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField4 = new javax.swing.JTextField();
+        btnVoltar = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        txtQuantidade = new javax.swing.JTextField();
+        txtProduto = new javax.swing.JTextField();
+        txtCategoria = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Tela de Administração - Mercado Iagon");
+        setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -69,9 +72,9 @@ public class TelaAdm extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(73, 73, 73)
                 .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(583, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -105,7 +108,7 @@ public class TelaAdm extends javax.swing.JFrame {
                 btnAdicionarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 130, 120, 33));
+        jPanel2.add(btnAdicionar, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 120, 33));
 
         btnExcluir.setBackground(new java.awt.Color(255, 153, 169));
         btnExcluir.setFont(new java.awt.Font("Nirmala UI", 1, 13)); // NOI18N
@@ -142,23 +145,23 @@ public class TelaAdm extends javax.swing.JFrame {
                 btnAlterarActionPerformed(evt);
             }
         });
-        jPanel2.add(btnAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 130, 108, 33));
+        jPanel2.add(btnAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 108, 33));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Design sem nome (1).png"))); // NOI18N
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 40, 40));
 
-        tabelaProdutos.setForeground(new java.awt.Color(255, 255, 255));
+        tabelaProdutos.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        tabelaProdutos.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Código", "Descrição", "Marca", "Cód.Barras"
+                "Produto", "Categoria", "Quantidade"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -173,69 +176,65 @@ public class TelaAdm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabelaProdutos);
         if (tabelaProdutos.getColumnModel().getColumnCount() > 0) {
             tabelaProdutos.getColumnModel().getColumn(0).setResizable(false);
+            tabelaProdutos.getColumnModel().getColumn(0).setPreferredWidth(10);
             tabelaProdutos.getColumnModel().getColumn(1).setResizable(false);
+            tabelaProdutos.getColumnModel().getColumn(1).setPreferredWidth(10);
             tabelaProdutos.getColumnModel().getColumn(2).setResizable(false);
-            tabelaProdutos.getColumnModel().getColumn(3).setResizable(false);
+            tabelaProdutos.getColumnModel().getColumn(2).setPreferredWidth(10);
         }
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 840, 181));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 840, 140));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Design sem nome (2).png"))); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 40, 40));
-
-        jTextField1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 120, 30));
-
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 120, 30));
-
-        jTextField3.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 120, 30));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 840, 10));
 
-        jTextField4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/sair.png"))); // NOI18N
+        btnVoltar.setBorder(null);
+        btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 40, 40));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        jLabel9.setText("Produto");
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 110, 30));
+
+        jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        jLabel10.setText("Quantidade");
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 110, 30));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
+        jLabel11.setText("Categoria");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 110, 30));
+
+        txtQuantidade.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        txtQuantidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
+        txtQuantidade.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                txtQuantidadeActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 120, 30));
+        jPanel2.add(txtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 130, 30));
 
-        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel5.setText("Produto");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 110, 30));
+        txtProduto.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        txtProduto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
+        txtProduto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtProdutoActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 130, 30));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel6.setText("Produto");
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 110, 30));
+        txtCategoria.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        txtCategoria.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
+        txtCategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCategoriaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 130, 30));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel7.setText("Produto");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 130, 110, 30));
-
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel8.setText("Produto");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 110, 30));
-
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/sair.png"))); // NOI18N
-        jButton1.setBorder(null);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 40, 40));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Inserir um título.png"))); // NOI18N
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 340, 70));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 440));
 
@@ -250,22 +249,6 @@ public class TelaAdm extends javax.swing.JFrame {
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAlterarActionPerformed
-
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
-
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
-
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void btnAdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMouseClicked
         // TODO add your handling code here:
@@ -299,6 +282,18 @@ public class TelaAdm extends javax.swing.JFrame {
         // TODO add your handling code here:
         btnExcluir.setBackground(new Color(255,153,169));
     }//GEN-LAST:event_btnExcluirMouseExited
+
+    private void txtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtQuantidadeActionPerformed
+
+    private void txtProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProdutoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtProdutoActionPerformed
+
+    private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCategoriaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,23 +334,26 @@ public class TelaAdm extends javax.swing.JFrame {
     private javax.swing.JButton btnAdicionar;
     private javax.swing.JButton btnAlterar;
     private javax.swing.JButton btnExcluir;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnVoltar;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JTable tabelaProdutos;
+    private javax.swing.JTextField txtCategoria;
+    private javax.swing.JTextField txtProduto;
+    private javax.swing.JTextField txtQuantidade;
     // End of variables declaration//GEN-END:variables
+
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("iconeJanela.png")));
+    }
 }
