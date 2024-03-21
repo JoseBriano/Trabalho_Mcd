@@ -5,6 +5,8 @@
  */
 package telas;
 
+import java.awt.Color;
+
 /**
  *
  * @author Senai
@@ -27,21 +29,104 @@ public class TelaUsuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        bntCompra = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        bntVoltar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(0, null, new java.awt.Color(255, 204, 0), null, null));
+
+        jTable1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(102, 255, 102)));
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 130, 460, 230));
+
+        bntCompra.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bntCompra.setText("Comprar");
+        bntCompra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bntCompraMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bntCompraMouseExited(evt);
+            }
+        });
+        bntCompra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntCompraActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bntCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 500, 100, 30));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/voltar.png"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 460, 40, 30));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/carrinho-carrinho.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 460, 40, -1));
+
+        bntVoltar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        bntVoltar.setText("Voltar");
+        bntVoltar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                bntVoltarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                bntVoltarMouseExited(evt);
+            }
+        });
+        bntVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bntVoltarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(bntVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 500, 100, 30));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Captura_de_tela_2024-03-21_143555.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 1120, 630));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void bntVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntVoltarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntVoltarActionPerformed
+
+    private void bntCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCompraActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bntCompraActionPerformed
+
+    private void bntCompraMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntCompraMouseEntered
+       bntCompra.setBackground(new Color (44, 133, 76) );
+    }//GEN-LAST:event_bntCompraMouseEntered
+
+    private void bntCompraMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntCompraMouseExited
+        bntCompra.setBackground(Color.white);
+    }//GEN-LAST:event_bntCompraMouseExited
+
+    private void bntVoltarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntVoltarMouseEntered
+         bntVoltar.setBackground(new Color (105, 38, 38) );
+    }//GEN-LAST:event_bntVoltarMouseEntered
+
+    private void bntVoltarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bntVoltarMouseExited
+         bntVoltar.setBackground(Color.white);
+    }//GEN-LAST:event_bntVoltarMouseExited
 
     /**
      * @param args the command line arguments
@@ -79,5 +164,12 @@ public class TelaUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bntCompra;
+    private javax.swing.JButton bntVoltar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
