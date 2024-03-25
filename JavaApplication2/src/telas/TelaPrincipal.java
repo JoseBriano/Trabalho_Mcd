@@ -34,7 +34,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         btnProdutosLimpeza = new javax.swing.JLabel();
         btnProdutosLimpeza1 = new javax.swing.JLabel();
         tela = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
 
         jLabel1.setText("jLabel1");
 
@@ -85,11 +84,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
         tela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Inserir um subtítulo.png"))); // NOI18N
         tela.setText("jLabel2");
         getContentPane().add(tela, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, 1080));
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Inserir um subtítulo.png"))); // NOI18N
-        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel3.setFocusable(false);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -204,7 +198,6 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel btnProdutosLimpeza1;
     private javax.swing.JLabel btnUser;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel tela;
     // End of variables declaration//GEN-END:variables
 }
