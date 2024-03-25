@@ -18,7 +18,7 @@ public class JavaApplication2 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-         java.awt.EventQueue.invokeLater(new Runnable() {
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new TelaPrincipal().setVisible(true);
             }

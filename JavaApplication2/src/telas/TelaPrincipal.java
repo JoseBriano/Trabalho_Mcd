@@ -27,67 +27,113 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnProdutos1 = new javax.swing.JButton();
-        btnCArnes = new javax.swing.JButton();
-        btnCArnes1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        btnUser = new javax.swing.JLabel();
+        btnFrutas = new javax.swing.JLabel();
+        btnCarrinho = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        btnProdutosLimpeza = new javax.swing.JLabel();
+        tela = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btnProdutosLimpeza1 = new javax.swing.JLabel();
+
+        jLabel1.setText("jLabel1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnProdutos1.setBackground(new java.awt.Color(153, 153, 153));
-        btnProdutos1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnProdutos1.setText("Ver mais");
-        btnProdutos1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnProdutos1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProdutos1ActionPerformed(evt);
+        btnUser.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnUserMouseClicked(evt);
             }
         });
-        getContentPane().add(btnProdutos1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 730, 250, 60));
+        getContentPane().add(btnUser, new org.netbeans.lib.awtextra.AbsoluteConstraints(1810, 40, 80, 90));
 
-        btnCArnes.setBackground(new java.awt.Color(153, 153, 153));
-        btnCArnes.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnCArnes.setText("Ver mais");
-        btnCArnes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCArnes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCArnesActionPerformed(evt);
+        btnFrutas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFrutasMouseClicked(evt);
             }
         });
-        getContentPane().add(btnCArnes, new org.netbeans.lib.awtextra.AbsoluteConstraints(1360, 730, 250, 60));
+        getContentPane().add(btnFrutas, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 470, 410, 480));
 
-        btnCArnes1.setBackground(new java.awt.Color(153, 153, 153));
-        btnCArnes1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        btnCArnes1.setText("Ver mais");
-        btnCArnes1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCArnes1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCArnes1ActionPerformed(evt);
+        btnCarrinho.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCarrinho.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCarrinhoMouseClicked(evt);
             }
         });
-        getContentPane().add(btnCArnes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 730, 250, 60));
+        getContentPane().add(btnCarrinho, new org.netbeans.lib.awtextra.AbsoluteConstraints(1710, 50, 80, 90));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/source/ReTelaPrincipal.png"))); // NOI18N
-        jLabel2.setFocusable(false);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/source/Inserir um subtítulo.png"))); // NOI18N
+        jLabel3.setFocusable(false);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        btnProdutosLimpeza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProdutosLimpezaMouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnProdutosLimpeza, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 460, 410, 480));
+
+        tela.setIcon(new javax.swing.ImageIcon(getClass().getResource("/source/Inserir um subtítulo.png"))); // NOI18N
+        tela.setText("jLabel2");
+        getContentPane().add(tela, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1930, 1080));
+
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, -1, -1));
+
+        btnProdutosLimpeza1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnProdutosLimpeza1MouseClicked(evt);
+            }
+        });
+        getContentPane().add(btnProdutosLimpeza1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 470, 410, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCArnesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCArnesActionPerformed
+    private void btnUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUserMouseClicked
         // TODO add your handling code here:
-        setVisible(false);
-    }//GEN-LAST:event_btnCArnesActionPerformed
+        //colocar a logica de mudar de tela
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaPrincipal().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_btnUserMouseClicked
 
-    private void btnProdutos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProdutos1ActionPerformed
+    private void btnProdutosLimpezaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosLimpezaMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnProdutos1ActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaPrincipal().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_btnProdutosLimpezaMouseClicked
 
-    private void btnCArnes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCArnes1ActionPerformed
+    private void btnFrutasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFrutasMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnCArnes1ActionPerformed
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaPrincipal().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_btnFrutasMouseClicked
+
+    private void btnCarrinhoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCarrinhoMouseClicked
+        // TODO add your handling code here:
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new TelaPrincipal().setVisible(true);
+            }
+        });
+    }//GEN-LAST:event_btnCarrinhoMouseClicked
+
+    private void btnProdutosLimpeza1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosLimpeza1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnProdutosLimpeza1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -115,6 +161,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -125,9 +186,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCArnes;
-    private javax.swing.JButton btnCArnes1;
-    private javax.swing.JButton btnProdutos1;
+    private javax.swing.JLabel btnCarrinho;
+    private javax.swing.JLabel btnFrutas;
+    private javax.swing.JLabel btnProdutosLimpeza;
+    private javax.swing.JLabel btnProdutosLimpeza1;
+    private javax.swing.JLabel btnUser;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel tela;
     // End of variables declaration//GEN-END:variables
 }
