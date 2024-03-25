@@ -47,8 +47,9 @@ public class CriarConta extends javax.swing.JFrame {
                 inputSenhaActionPerformed(evt);
             }
         });
-        getContentPane().add(inputSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 690, 220, 20));
+        getContentPane().add(inputSenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(1250, 690, 220, 30));
 
+        jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
@@ -56,7 +57,7 @@ public class CriarConta extends javax.swing.JFrame {
         });
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1204, 824, 210, 50));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagemlogin/Inserir um subtítulo (2).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagemlogin/Inserir um subtítulo.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1920, 1080));
 
         pack();
