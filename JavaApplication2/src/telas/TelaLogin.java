@@ -5,10 +5,8 @@
  */
 package telas;
 
-<<<<<<< HEAD
-=======
+
 import java.awt.Toolkit;
->>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.Bean.Usuario;
@@ -29,10 +27,8 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-<<<<<<< HEAD
-=======
         setIcon();
->>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
+
     }
 
     /**
@@ -136,34 +132,7 @@ public class TelaLogin extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TelaLogin.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-<<<<<<< HEAD
-        //</editor-fold>
-        //</editor-fold>
-=======
->>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -180,10 +149,9 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
-<<<<<<< HEAD
-=======
+
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("iconeJanela.png")));
     }
->>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
+
 }

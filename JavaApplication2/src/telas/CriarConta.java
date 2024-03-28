@@ -5,11 +5,10 @@
  */
 package telas;
 
-<<<<<<< HEAD
-=======
+
+
 import java.awt.Toolkit;
 import javax.swing.JFrame;
->>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
 import javax.swing.JOptionPane;
 import model.Bean.Usuario;
 import model.DAO.UsuarioDAO;
@@ -27,11 +26,9 @@ public class CriarConta extends javax.swing.JFrame {
      */
     public CriarConta() {
         initComponents();
-<<<<<<< HEAD
-=======
+
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setIcon();
->>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
+
     }
 
     /**
@@ -132,10 +129,7 @@ public class CriarConta extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(CriarConta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-<<<<<<< HEAD
-        //</editor-fold>
-=======
->>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -145,20 +139,17 @@ public class CriarConta extends javax.swing.JFrame {
         });
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
+
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPasswordField inputSenha;
     private javax.swing.JTextField inputUser;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
-<<<<<<< HEAD
-=======
+
     private void setIcon() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("iconeJanela.png")));
     }
->>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
 }
