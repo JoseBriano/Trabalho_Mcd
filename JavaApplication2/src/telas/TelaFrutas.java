@@ -5,6 +5,11 @@
  */
 package telas;
 
+<<<<<<< HEAD
+=======
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+>>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
 import model.Bean.Produtos;
 import model.DAO.ProdutosDAO;
 
@@ -18,6 +23,8 @@ public class TelaFrutas extends javax.swing.JFrame {
     ProdutosDAO proD = new ProdutosDAO();
     public TelaFrutas() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setIcon();
     }
 
     /**
@@ -255,4 +262,7 @@ public class TelaFrutas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("iconeJanela.png")));
+    }
 }

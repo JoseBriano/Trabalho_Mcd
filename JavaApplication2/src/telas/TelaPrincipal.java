@@ -5,6 +5,9 @@
  */
 package telas;
 
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Senai
@@ -16,6 +19,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setIcon();
     }
 
     /**
@@ -229,4 +234,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel tela;
     // End of variables declaration//GEN-END:variables
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("iconeJanela.png")));
+    }
 }

@@ -5,6 +5,10 @@
  */
 package telas;
 
+<<<<<<< HEAD
+=======
+import java.awt.Toolkit;
+>>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.Bean.Usuario;
@@ -25,6 +29,10 @@ public class TelaLogin extends javax.swing.JFrame {
     public TelaLogin() {
         initComponents();
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+<<<<<<< HEAD
+=======
+        setIcon();
+>>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
     }
 
     /**
@@ -151,8 +159,11 @@ public class TelaLogin extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+<<<<<<< HEAD
         //</editor-fold>
         //</editor-fold>
+=======
+>>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -169,4 +180,10 @@ public class TelaLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
+<<<<<<< HEAD
+=======
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("iconeJanela.png")));
+    }
+>>>>>>> 1713ef02235ac05dc5f0342983ac8b85818a3600
 }
