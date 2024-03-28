@@ -6,6 +6,7 @@
 package javaapplication2;
 
 import telas.TelaAdm;
+import telas.TelaLogin;
 import telas.TelaPrincipal;
 
 /**
@@ -20,7 +21,7 @@ public class JavaApplication2 {
     public static void main(String[] args) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaPrincipal().setVisible(true);
+                new TelaLogin().setVisible(true);
             }
         });
     }

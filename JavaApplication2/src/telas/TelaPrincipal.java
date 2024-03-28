@@ -5,6 +5,9 @@
  */
 package telas;
 
+import java.awt.Toolkit;
+import javax.swing.JFrame;
+
 /**
  *
  * @author Senai
@@ -16,6 +19,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
      */
     public TelaPrincipal() {
         initComponents();
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setIcon();
     }
 
     /**
@@ -91,11 +96,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void btnUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnUserMouseClicked
         // TODO add your handling code here:
         //colocar a logica de mudar de tela
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TelaPrincipal().setVisible(true);
-            }
-        });
+        new TelaLogin().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_btnUserMouseClicked
 
     private void btnProdutosLimpezaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnProdutosLimpezaMouseClicked
@@ -200,4 +202,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel tela;
     // End of variables declaration//GEN-END:variables
+    private void setIcon() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("iconeJanela.png")));
+    }
 }
