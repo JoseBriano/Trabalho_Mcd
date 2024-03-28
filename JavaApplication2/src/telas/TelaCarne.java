@@ -5,15 +5,18 @@
  */
 package telas;
 
+import model.Bean.Produtos;
+import model.DAO.ProdutosDAO;
+
 /**
  *
  * @author Senai
  */
 public class TelaCarne extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaCarne
-     */
+    Produtos pro = new Produtos();
+    ProdutosDAO proD = new ProdutosDAO();
+
     public TelaCarne() {
         initComponents();
     }
@@ -122,34 +125,82 @@ public class TelaCarne extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("PATINHO");
+        pro.setCategoria("Carne");
+        pro.setPreco((float) 39.90);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("CONTRA FILÉ");
+        pro.setCategoria("Carne");
+        pro.setPreco((float) 55.90);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("PICANHA BOVINA");
+        pro.setCategoria("Carne");
+        pro.setPreco((float) 60.00);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("BISTECA DE PORCO");
+        pro.setCategoria("Carne");
+        pro.setPreco((float) 39.90);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("CORAÇÃO DE GALINHA");
+        pro.setCategoria("Carne");
+        pro.setPreco((float) 18.99);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("CUPIM");
+        pro.setCategoria("Carne");
+        pro.setPreco((float) 35.90);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("FILÉ MIGNON");
+        pro.setCategoria("Carne");
+        pro.setPreco((float) 65.99);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("FILÉ FRANGO");
+        pro.setCategoria("Carne");
+        pro.setPreco((float) 19.99);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -184,6 +235,10 @@ public class TelaCarne extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TelaCarne.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

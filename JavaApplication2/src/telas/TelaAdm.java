@@ -7,6 +7,12 @@ package telas;
 
 import java.awt.Color;
 import java.awt.Toolkit;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+import javax.swing.table.DefaultTableModel;
+import model.Bean.Estoque;
+import model.Bean.Produtos;
+import model.DAO.EstoqueDAO;
 
 /**
  *
@@ -14,12 +20,36 @@ import java.awt.Toolkit;
  */
 public class TelaAdm extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaAdm
-     */
+    Estoque est = new Estoque();
+    EstoqueDAO estD = new EstoqueDAO();
+
     public TelaAdm() {
         initComponents();
         setIcon();
+        readJTable();
+        tabelaProdutos.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+
+            public void valueChanged(ListSelectionEvent event) {
+                if (!event.getValueIsAdjusting()) {
+                    int selectedLine = tabelaProdutos.getSelectedRow();
+                    if (selectedLine != -1) {
+                        int idAtual = (int) tabelaProdutos.getValueAt(selectedLine, 0);
+                        est.setIdEstoque(idAtual);
+                    }
+                }
+            }
+        });
+    }
+        public void readJTable() {
+        DefaultTableModel modelo = (DefaultTableModel) tabelaProdutos.getModel();
+        modelo.setNumRows(0);
+        for (Estoque e : estD.read()) {
+            modelo.addRow(new Object[]{
+                e.getIdEstoque(),
+                e.getCategoria(),
+                e.getQuantidade()
+            });
+        }
     }
 
     /**
@@ -38,17 +68,13 @@ public class TelaAdm extends javax.swing.JFrame {
         btnAdicionar = new javax.swing.JButton();
         btnExcluir = new javax.swing.JButton();
         btnAlterar = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabelaProdutos = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         btnVoltar = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         txtQuantidade = new javax.swing.JTextField();
-        txtProduto = new javax.swing.JTextField();
         txtCategoria = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
 
@@ -124,6 +150,11 @@ public class TelaAdm extends javax.swing.JFrame {
                 btnExcluirMouseExited(evt);
             }
         });
+        btnExcluir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExcluirActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnExcluir, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 130, 60, 33));
 
         btnAlterar.setBackground(new java.awt.Color(189, 236, 182));
@@ -147,9 +178,6 @@ public class TelaAdm extends javax.swing.JFrame {
         });
         jPanel2.add(btnAlterar, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 130, 108, 33));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Design sem nome (1).png"))); // NOI18N
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 10, 40, 40));
-
         tabelaProdutos.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         tabelaProdutos.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         tabelaProdutos.setModel(new javax.swing.table.DefaultTableModel(
@@ -157,11 +185,11 @@ public class TelaAdm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Produto", "Categoria", "Quantidade"
+                "ID", "Categoria", "Estoque"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -177,34 +205,28 @@ public class TelaAdm extends javax.swing.JFrame {
         if (tabelaProdutos.getColumnModel().getColumnCount() > 0) {
             tabelaProdutos.getColumnModel().getColumn(0).setResizable(false);
             tabelaProdutos.getColumnModel().getColumn(0).setPreferredWidth(10);
-            tabelaProdutos.getColumnModel().getColumn(1).setResizable(false);
-            tabelaProdutos.getColumnModel().getColumn(1).setPreferredWidth(10);
-            tabelaProdutos.getColumnModel().getColumn(2).setResizable(false);
-            tabelaProdutos.getColumnModel().getColumn(2).setPreferredWidth(10);
         }
 
         jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 840, 140));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Design sem nome (2).png"))); // NOI18N
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 10, 40, 40));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 840, 10));
 
         btnVoltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/sair.png"))); // NOI18N
         btnVoltar.setBorder(null);
         btnVoltar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVoltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVoltarActionPerformed(evt);
+            }
+        });
         jPanel2.add(btnVoltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, 40, 40));
-
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel9.setText("Produto");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 110, 30));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel10.setText("Quantidade");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 110, 30));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 110, 30));
 
         jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
         jLabel11.setText("Categoria");
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 110, 30));
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 110, 30));
 
         txtQuantidade.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         txtQuantidade.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
@@ -213,16 +235,7 @@ public class TelaAdm extends javax.swing.JFrame {
                 txtQuantidadeActionPerformed(evt);
             }
         });
-        jPanel2.add(txtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 130, 30));
-
-        txtProduto.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        txtProduto.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
-        txtProduto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtProdutoActionPerformed(evt);
-            }
-        });
-        jPanel2.add(txtProduto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 130, 30));
+        jPanel2.add(txtQuantidade, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 130, 30));
 
         txtCategoria.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         txtCategoria.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(51, 51, 255)));
@@ -231,7 +244,7 @@ public class TelaAdm extends javax.swing.JFrame {
                 txtCategoriaActionPerformed(evt);
             }
         });
-        jPanel2.add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 130, 30));
+        jPanel2.add(txtCategoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 130, 30));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/assets/Inserir um título.png"))); // NOI18N
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 340, 70));
@@ -242,58 +255,75 @@ public class TelaAdm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+    private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnAdicionarActionPerformed
-
-    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAlterarActionPerformed
-
-    private void btnAdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMouseClicked
-        // TODO add your handling code here:
-        
-        
-    }//GEN-LAST:event_btnAdicionarMouseClicked
-
-    private void btnAdicionarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMouseEntered
-       btnAdicionar.setBackground(new Color(62, 196, 240));
-    }//GEN-LAST:event_btnAdicionarMouseEntered
-
-    private void btnAdicionarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMouseExited
-        // TODO add your handling code here:
-        btnAdicionar.setBackground(new Color(173,216,230));
-    }//GEN-LAST:event_btnAdicionarMouseExited
-
-    private void btnAlterarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlterarMouseEntered
-        btnAlterar.setBackground(new Color(100, 245, 78));
-    }//GEN-LAST:event_btnAlterarMouseEntered
-
-    private void btnAlterarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlterarMouseExited
-        btnAlterar.setBackground(new Color(189,236,182));
-    }//GEN-LAST:event_btnAlterarMouseExited
-
-    private void btnExcluirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcluirMouseEntered
-        // TODO add your handling code here:
-        btnExcluir.setBackground(new Color(237,90,113));
-    }//GEN-LAST:event_btnExcluirMouseEntered
-
-    private void btnExcluirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcluirMouseExited
-        // TODO add your handling code here:
-        btnExcluir.setBackground(new Color(255,153,169));
-    }//GEN-LAST:event_btnExcluirMouseExited
+    }//GEN-LAST:event_txtCategoriaActionPerformed
 
     private void txtQuantidadeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtQuantidadeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtQuantidadeActionPerformed
 
-    private void txtProdutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtProdutoActionPerformed
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtProdutoActionPerformed
+        est.setCategoria(txtCategoria.getText());
+        est.setQuantidade(Integer.parseInt(txtQuantidade.getText()));
 
-    private void txtCategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCategoriaActionPerformed
+        estD.update(est);
+        readJTable();
+    }//GEN-LAST:event_btnAlterarActionPerformed
+
+    private void btnAlterarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlterarMouseExited
+        btnAlterar.setBackground(new Color(189, 236, 182));
+    }//GEN-LAST:event_btnAlterarMouseExited
+
+    private void btnAlterarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAlterarMouseEntered
+        btnAlterar.setBackground(new Color(100, 245, 78));
+    }//GEN-LAST:event_btnAlterarMouseEntered
+
+    private void btnExcluirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcluirMouseExited
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCategoriaActionPerformed
+        btnExcluir.setBackground(new Color(255, 153, 169));
+    }//GEN-LAST:event_btnExcluirMouseExited
+
+    private void btnExcluirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExcluirMouseEntered
+        // TODO add your handling code here:
+        btnExcluir.setBackground(new Color(237, 90, 113));
+    }//GEN-LAST:event_btnExcluirMouseEntered
+
+    private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
+        // TODO add your handling code here:
+        est.setCategoria(txtCategoria.getText());
+        est.setQuantidade(Integer.parseInt(txtQuantidade.getText()));
+
+        estD.create(est);
+        readJTable();
+    }//GEN-LAST:event_btnAdicionarActionPerformed
+
+    private void btnAdicionarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMouseExited
+        // TODO add your handling code here:
+        btnAdicionar.setBackground(new Color(173, 216, 230));
+    }//GEN-LAST:event_btnAdicionarMouseExited
+
+    private void btnAdicionarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMouseEntered
+        btnAdicionar.setBackground(new Color(62, 196, 240));
+    }//GEN-LAST:event_btnAdicionarMouseEntered
+
+    private void btnAdicionarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAdicionarMouseClicked
+        // TODO add your handling code here:
+        estD.delete(est);
+        readJTable();
+    }//GEN-LAST:event_btnAdicionarMouseClicked
+
+    private void btnExcluirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExcluirActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_btnExcluirActionPerformed
+
+    private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
+        // TODO add your handling code here:
+        new TelaLogin().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVoltarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -321,6 +351,7 @@ public class TelaAdm extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TelaAdm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -339,17 +370,13 @@ public class TelaAdm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable tabelaProdutos;
     private javax.swing.JTextField txtCategoria;
-    private javax.swing.JTextField txtProduto;
     private javax.swing.JTextField txtQuantidade;
     // End of variables declaration//GEN-END:variables
 

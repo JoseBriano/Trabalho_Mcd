@@ -5,15 +5,18 @@
  */
 package telas;
 
+import model.Bean.Produtos;
+import model.DAO.ProdutosDAO;
+
 /**
  *
  * @author Senai
  */
 public class TelaProduto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaProduto
-     */
+    Produtos pro = new Produtos();
+    ProdutosDAO proD = new ProdutosDAO();
+
     public TelaProduto() {
         initComponents();
     }
@@ -71,7 +74,7 @@ public class TelaProduto extends javax.swing.JFrame {
                 jLabel5MouseClicked(evt);
             }
         });
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 200, 220, 250));
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 200, 220, 250));
 
         jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -137,34 +140,83 @@ public class TelaProduto extends javax.swing.JFrame {
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("DESINFETANTE PATO");
+        pro.setCategoria("Produto de limpeza");
+        pro.setPreco((float) 14.90);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("SABÃO EM PÓ TIXAN YPÊ");
+        pro.setCategoria("Produto de limpeza");
+        pro.setPreco((float) 11.50);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("DESINFETANTE SOL");
+        pro.setCategoria("Produto de limpeza");
+        pro.setPreco((float) 11.50);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("ESPONJA LAVAR-LOUÇAS SCOTCH-BRITE");
+        pro.setCategoria("Produto de limpeza");
+        pro.setPreco((float) 1.99);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
+        // TODO add your handling code here:        
+        pro.setNomeProduto("DETERGENTE YPÊ");
+        pro.setCategoria("Produto de limpeza");
+        pro.setPreco((float) 2.99);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
+
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("DESENGORDURANTE MR.MUSCULO");
+        pro.setCategoria("Produto de limpeza");
+        pro.setPreco((float) 11.85);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("VANISH TIRA MANCHAS");
+        pro.setCategoria("Produto de limpeza");
+        pro.setPreco((float) 14.99);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("LAVA ROUPAS SOL");
+        pro.setCategoria("Produto de limpeza");
+        pro.setPreco((float) 35.59);
+        pro.setQuantidade(1);
+
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -199,6 +251,10 @@ public class TelaProduto extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TelaProduto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>

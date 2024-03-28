@@ -5,15 +5,17 @@
  */
 package telas;
 
+import model.Bean.Produtos;
+import model.DAO.ProdutosDAO;
+
 /**
  *
  * @author Senai
  */
 public class TelaFrutas extends javax.swing.JFrame {
 
-    /**
-     * Creates new form TelaFrutas
-     */
+    Produtos pro = new Produtos();
+    ProdutosDAO proD = new ProdutosDAO();
     public TelaFrutas() {
         initComponents();
     }
@@ -121,34 +123,82 @@ public class TelaFrutas extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
+        pro.setNomeProduto("BANANA");
+        pro.setCategoria("Frutas");
+        pro.setPreco((float) 5.99);
+        pro.setQuantidade(1);
+        
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
+                pro.setNomeProduto("MORANGO");
+        pro.setCategoria("Frutas");
+        pro.setPreco((float) 32.90);
+        pro.setQuantidade(1);
+        
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
         // TODO add your handling code here:
+                pro.setNomeProduto("UVA");
+        pro.setCategoria("Frutas");
+        pro.setPreco((float) 13.90);
+        pro.setQuantidade(1);
+        
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         // TODO add your handling code here:
+                pro.setNomeProduto("MAÇA");
+        pro.setCategoria("Frutas");
+        pro.setPreco((float) 7.50);
+        pro.setQuantidade(1);
+        
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
+                pro.setNomeProduto("GOIABA");
+        pro.setCategoria("Frutas");
+        pro.setPreco((float) 5.89);
+        pro.setQuantidade(1);
+        
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // TODO add your handling code here:
+                pro.setNomeProduto("ABACATE");
+        pro.setCategoria("Frutas");
+        pro.setPreco((float) 7.90);
+        pro.setQuantidade(1);
+        
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
+                pro.setNomeProduto("LARANJA");
+        pro.setCategoria("Frutas");
+        pro.setPreco((float) 3.99);
+        pro.setQuantidade(1);
+        
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
+                pro.setNomeProduto("MAMÃO PAPAIA");
+        pro.setCategoria("Frutas");
+        pro.setPreco((float) 5.40);
+        pro.setQuantidade(1);
+        
+        proD.addProduto(pro);
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
@@ -182,6 +232,7 @@ public class TelaFrutas extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(TelaFrutas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
