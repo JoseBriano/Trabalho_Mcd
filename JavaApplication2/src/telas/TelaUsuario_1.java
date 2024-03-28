@@ -95,6 +95,12 @@ public class TelaUsuario_1 extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabelaCarrinho);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(472, 220, 1070, 630));
+
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 900, 300, 70));
 
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -129,6 +135,12 @@ public class TelaUsuario_1 extends javax.swing.JFrame {
         proD.deleteProduto(pro);
         readJTable();
     }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        proD.deleteTudoProduto(pro);
+        readJTable();
+    }//GEN-LAST:event_jLabel2MouseClicked
 
     /**
      * @param args the command line arguments
