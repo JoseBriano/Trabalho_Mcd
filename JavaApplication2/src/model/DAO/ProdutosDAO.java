@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import model.Bean.Produtos;
+import telas.TelaFinal;
 
 /**
  *
@@ -97,15 +98,14 @@ public class ProdutosDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             
-            stmt = conexao.prepareCall("DELETE FROM produtos WHERE id_Produtos >=1");
-            stmt.setInt(1, produto.getIdProdutos());
-            
+            stmt = conexao.prepareCall("DELETE FROM produtos WHERE id_Produtos >=0");
             stmt.executeUpdate();
             
             stmt.close();
             conexao.close();
             
-            
+             new TelaFinal().setVisible(true);
+             
         }catch (SQLException e){
             e.printStackTrace();
         }
